@@ -67,12 +67,10 @@ export function CheckoutPage() {
                   customerEmail: 'customer123@gmail.com',
                   successUrl:
                     window.location.origin +
-                    '/sandbox/success' +
+                    '/success' +
                     window.location.search,
                   failUrl:
-                    window.location.origin +
-                    '/sandbox/fail' +
-                    window.location.search,
+                    window.location.origin + '/fail' + window.location.search,
                 });
               } catch (error) {
                 // TODO: 에러 처리
