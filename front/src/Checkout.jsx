@@ -11,8 +11,10 @@ export function CheckoutPage() {
 
   useEffect(() => {
     (async () => {
+      // NOTE: paymentWidget의 key값 수정
       const paymentWidget = await loadPaymentWidget(
         'test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm',
+        // 'test_ck_pP2YxJ4K87BdWbyy4nbzrRGZwXLO',
         ANONYMOUS
       ); // 비회원 customerKey
 
