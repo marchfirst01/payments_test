@@ -30,12 +30,7 @@ export function FailPage() {
         </div>
 
         <div className='w-100 button-group'>
-          <a
-            className='btn'
-            href='https://developers.tosspayments.com/sandbox'
-            target='_blank'
-            rel='noreferrer noopener'
-          >
+          <a className='btn' href='/' target='_blank' rel='noreferrer noopener'>
             다시 테스트하기
           </a>
           <div className='flex' style={{ gap: '16px' }}>
