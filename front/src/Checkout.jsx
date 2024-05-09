@@ -4,18 +4,27 @@ const generateRandomString = () => window.btoa(Math.random()).slice(0, 20);
 
 export function CheckoutPage() {
   const clientKey = 'test_ck_E92LAa5PVbJJQoY6logPV7YmpXyJ';
-  const onClickTest = () =>
-    loadTossPayments(clientKey).then(tossPayments => {
-      tossPayments.requestPayment('카드', {
-        amount: 15000,
-        orderId: generateRandomString(),
-        orderName: '토스 티셔츠 외 2건',
-        customerName: '박토스',
+  const onClickTest = async () => {
+    try {
+      const tossPayments = await loadTossPayments(clientKey);
+      const orderId = generateRandomString();
+      const amount = 20000;
+      const orderName = '토스 티셔츠';
+      const customerName = '김토스';
+
+      await tossPayments.requestPayment('카드', {
+        amount: amount,
+        orderId: orderId,
+        orderName: orderName,
+        customerName: customerName,
         successUrl:
           window.location.origin + '/success' + window.location.search,
         failUrl: window.location.origin + '/fail' + window.location.search,
       });
-    });
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className='wrapper w-100'>
